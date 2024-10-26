@@ -2,7 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="chat_background_color">#161616</color>
     <color name="main_color">#947FFD</color>
     <color name="switch_background">#6B6B6B</color>
-    <color name="chat_background_color">#F2F2F2</color>
 </resources>

@@ -3,9 +3,11 @@ package com.arziman_off.pureclone.presentation
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.arziman_off.pureclone.R
+import com.arziman_off.pureclone.presentation.fragments.ChatsFragment
+import com.arziman_off.pureclone.presentation.fragments.HomeFragment
+import com.arziman_off.pureclone.presentation.fragments.LikesFragment
+import com.arziman_off.pureclone.presentation.fragments.SettingsFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

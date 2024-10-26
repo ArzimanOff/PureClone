@@ -1,4 +1,4 @@
-package com.arziman_off.pureclone.presentation
+package com.arziman_off.pureclone.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

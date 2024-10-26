@@ -1,13 +1,16 @@
-package com.arziman_off.pureclone.presentation
+package com.arziman_off.pureclone.presentation.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.arziman_off.pureclone.R
+import com.arziman_off.pureclone.presentation.fragments.sheet_dialog_fragment.CustomBottomSheet
 import com.arziman_off.pureclone.presentation.recycler_chats.ChatsAdapter
 import com.arziman_off.pureclone.presentation.view_models.ChatsViewModel
 import com.arziman_off.pureclone.presentation.view_models.ChatsViewModelFactory
@@ -17,6 +20,9 @@ class ChatsFragment : Fragment() {
 
     private lateinit var chatsRecyclerView: RecyclerView
     private lateinit var chatsAdapter: ChatsAdapter
+
+    private lateinit var likesCntText: TextView
+    private lateinit var switchMode: SwitchCompat
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -48,19 +54,34 @@ class ChatsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
         setupViewModelObservers()
+        setOnEventListeners()
+    }
+
+    private fun setOnEventListeners() {
+        switchMode.setOnClickListener {
+            val bottomSheet = CustomBottomSheet()
+            bottomSheet.show(parentFragmentManager, "CustomBottomSheet")
+        }
     }
 
     private fun setupViewModelObservers() {
         viewModel.chatsList.observe(viewLifecycleOwner) {
             chatsAdapter.submitList(it)
         }
-        viewModel.isLoading.observe(viewLifecycleOwner){
+        viewModel.likesCntText.observe(viewLifecycleOwner){
+            likesCntText.text = it
+        }
+        viewModel.chatListIsLoading.observe(viewLifecycleOwner){
+            //TODO
+        }
+        viewModel.likesCntIsLoading.observe(viewLifecycleOwner){
             //TODO
         }
     }
 
     private fun initViews(view: View) {
-
+        likesCntText = view.findViewById(R.id.likesCntText)
+        switchMode = view.findViewById(R.id.switchMode)
     }
 
     private fun setupRecyclerView(view: View) {
