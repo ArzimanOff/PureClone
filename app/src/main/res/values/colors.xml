@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#947FFD</color>
     <color name="switch_background">#6B6B6B</color>
+    <color name="isolation_mode_fragment_bg">#AFBBFA</color>
+    <color name="btn_buy_bg_color">#AA044A</color>
     <color name="chat_background_color">#F2F2F2</color>
 </resources>

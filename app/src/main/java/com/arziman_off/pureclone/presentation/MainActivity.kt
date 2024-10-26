@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.arziman_off.pureclone.R
-import com.arziman_off.pureclone.presentation.fragments.ChatsFragment
+import com.arziman_off.pureclone.presentation.fragments.ChatsListFragment
 import com.arziman_off.pureclone.presentation.fragments.HomeFragment
 import com.arziman_off.pureclone.presentation.fragments.LikesFragment
 import com.arziman_off.pureclone.presentation.fragments.SettingsFragment
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setClickListeners()
         if (savedInstanceState == null) {
             bottomNavigationView.selectedItemId = R.id.navigation_chats
-            val fragment = ChatsFragment.newInstance()
+            val fragment = ChatsListFragment.newInstance()
             launchFragment(fragment)
         }
     }
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
                     launchFragment(fragment)
                 }
                 R.id.navigation_chats -> {
-                    val fragment = ChatsFragment.newInstance()
+                    val fragment = ChatsListFragment.newInstance()
                     launchFragment(fragment)
                 }
                 R.id.navigation_likes -> {

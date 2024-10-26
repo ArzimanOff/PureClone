@@ -9,7 +9,9 @@ import com.arziman_off.pureclone.domain.UserChat
 import com.bumptech.glide.Glide
 
 
-class ChatsAdapter: ListAdapter<UserChat, UserChatViewHolder>(UserChatDiffCallback()) {
+class ChatsAdapter(
+    private val listener: ChatClickListener
+): ListAdapter<UserChat, UserChatViewHolder>(UserChatDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserChatViewHolder {
         val res = R.layout.item_chat
@@ -31,6 +33,11 @@ class ChatsAdapter: ListAdapter<UserChat, UserChatViewHolder>(UserChatDiffCallba
             .placeholder(R.drawable.ic_launcher_foreground)
             .error(R.drawable.ic_launcher_background)
             .into(holder.avatar)
+
+        // Устанавливаем обработчик клика
+        holder.itemView.setOnClickListener {
+            listener.onChatClick(userChat)  // Вызываем метод интерфейса, передавая выбранный чат
+        }
 
         holder.readStatus.visibility = if (userChat.isMessageRead) {
             View.GONE

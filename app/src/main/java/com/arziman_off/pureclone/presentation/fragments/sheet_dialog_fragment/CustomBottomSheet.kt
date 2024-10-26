@@ -9,6 +9,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class CustomBottomSheet : BottomSheetDialogFragment() {
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        isCancelable = true
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -16,13 +21,12 @@ class CustomBottomSheet : BottomSheetDialogFragment() {
         return inflater.inflate(R.layout.fragment_custom_bottom_sheet, container, false)
     }
 
-    // Закрытие по клику на крестик
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val closeButton = view.findViewById<View>(R.id.closeButton)
         closeButton.setOnClickListener {
-            dismiss()  // Закрываем модальное окно
+            dismiss()
         }
     }
 }

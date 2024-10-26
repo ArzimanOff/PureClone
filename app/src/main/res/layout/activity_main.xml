@@ -10,7 +10,7 @@
     <!-- Контейнер для фрагментов -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
-        android:name="com.arziman_off.pureclone.presentation.fragments.ChatsFragment"
+        android:name="com.arziman_off.pureclone.presentation.fragments.ChatsListFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="top"

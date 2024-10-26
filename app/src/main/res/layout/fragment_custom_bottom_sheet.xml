@@ -1,39 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="1000dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
-    >
-
-    <TextView
-        android:id="@+id/modalTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Заголовок"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="wrap_content"
+    android:background="@color/isolation_mode_fragment_bg"
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/closeButton"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:contentDescription="Закрыть"
         android:src="@drawable/ic_close"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Закрыть" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ic_isolation_mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="Закрыть"
+        android:src="@drawable/ic_isolation_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/isolation_mode_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AAAAAA!!!"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+
+        android:text="Режим инкогнито на 24 часа"
+        android:textAllCaps="true"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_isolation_mode" />
+
+    <TextView
+        android:id="@+id/isolation_mode_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingHorizontal="8dp"
+
+        android:text="Стань невидимкой в ленте и чатах, скрой объявление и наслаждайся Space незамеченным"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textStyle="normal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/isolation_mode_title" />
+
+    <LinearLayout
+        android:id="@+id/tariffs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        app:layout_constraintBottom_toTopOf="@id/btn_buy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/isolation_mode_text"
+
         />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_buy"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="1"
+
+        android:backgroundTint="@color/btn_buy_bg_color"
+        android:text="Купить"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+
+        android:textStyle="normal"
+        app:cornerRadius="16dp"
+
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tariffs_container" />
+
+    <TextView
+        android:id="@+id/terms_and_conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:alpha="0.5"
+        android:text="условия и положения"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_buy" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

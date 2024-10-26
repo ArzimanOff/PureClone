@@ -10,13 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.arziman_off.pureclone.R
+import com.arziman_off.pureclone.domain.UserChat
 import com.arziman_off.pureclone.presentation.fragments.sheet_dialog_fragment.CustomBottomSheet
+import com.arziman_off.pureclone.presentation.recycler_chats.ChatClickListener
 import com.arziman_off.pureclone.presentation.recycler_chats.ChatsAdapter
 import com.arziman_off.pureclone.presentation.view_models.ChatsViewModel
 import com.arziman_off.pureclone.presentation.view_models.ChatsViewModelFactory
 
 
-class ChatsFragment : Fragment() {
+class ChatsListFragment : Fragment(), ChatClickListener {
 
     private lateinit var chatsRecyclerView: RecyclerView
     private lateinit var chatsAdapter: ChatsAdapter
@@ -86,7 +88,7 @@ class ChatsFragment : Fragment() {
 
     private fun setupRecyclerView(view: View) {
         chatsRecyclerView = view.findViewById(R.id.rv_chats)
-        chatsAdapter = ChatsAdapter()
+        chatsAdapter = ChatsAdapter(this)
         chatsRecyclerView.adapter = chatsAdapter
 
         viewModel.loadChatsInfo()
@@ -96,12 +98,18 @@ class ChatsFragment : Fragment() {
         chatsRecyclerView.adapter = chatsAdapter
     }
 
-
+    override fun onChatClick(userChat: UserChat) {
+        val chatFragment = ChatFragment.newInstance(userChat)
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, chatFragment)
+            .addToBackStack(null)
+            .commit()
+    }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            ChatsFragment().apply {
+            ChatsListFragment().apply {
                 arguments = Bundle().apply {
                 }
             }
