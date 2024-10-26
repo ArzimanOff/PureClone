@@ -1,0 +1,20 @@
+<!-- res/menu/bottom_nav_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_main"
+        android:icon="@drawable/ic_home"
+        android:title="@string/nav_bar_title_main" />
+    <item
+        android:id="@+id/navigation_chats"
+        android:icon="@drawable/ic_chats"
+        android:title="@string/nav_bar_title_chats" />
+    <item
+        android:id="@+id/navigation_likes"
+        android:icon="@drawable/ic_likes"
+        android:title="@string/nav_bar_title_likes" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/nav_bar_title_settings" />
+</menu>
+
