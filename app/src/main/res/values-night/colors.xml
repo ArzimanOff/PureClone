@@ -4,9 +4,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="chat_background_color">#161616</color>
     <color name="main_color">#947FFD</color>
+    <color name="main_color_dark">#7446AC</color>
     <color name="chat_input_text_color">#D0CECE</color>
     <color name="chat_btn_icons_color">#ADABAB</color>
     <color name="isolation_mode_fragment_bg">#0D1333</color>
     <color name="btn_buy_bg_color">#AA044A</color>
     <color name="switch_background">#6B6B6B</color>
+    <color name="screen_bg">#000000</color>
 </resources>

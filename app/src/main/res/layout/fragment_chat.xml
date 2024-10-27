@@ -6,21 +6,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragments.ChatFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/rv_banners"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        tools:listitem="@layout/banner_item"
-        tools:itemCount="5"
+        android:background="@color/screen_bg"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/helper_view_bottom_of_rv_banners"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        />
+        <ImageView
+            android:id="@+id/btnBack"
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_margin="16dp"
+
+            android:src="@drawable/ic_btn_back"
+
+            android:contentDescription="back btn"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/profile_image"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            android:layout_marginEnd="8dp"
+
+            tools:src="@drawable/ic_launcher_background"
+            />
+
+        <ImageView
+            android:id="@+id/btnMenu"
+
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+
+            android:layout_margin="16dp"
+
+            android:src="@drawable/ic_btn_menu"
+
+            android:contentDescription="menu btn"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="40dp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/main_color_dark"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:id="@+id/notifyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:drawablePadding="8dp"
+                app:drawableStartCompat="@drawable/ic_rocket"
+                tools:text="2 общих соблазна"
+                />
+
+            <ImageView
+                android:id="@+id/btnHideNotify"
+
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+
+
+                android:src="@drawable/ic_btn_close"
+
+                android:contentDescription="menu btn"
+                />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <View
         android:id="@+id/helper_view_top_of_rb_chats_container"
@@ -67,14 +152,16 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:layout_margin="32dp"
+            android:alpha="0.6"
 
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/etNewMessageInputBox"
             />
 
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/etNewMessageInputBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -98,22 +185,52 @@
 
                 android:src="@drawable/ic_add_media"
 
-                android:contentDescription="send message btn" />
+                android:contentDescription="btn add media"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
             <EditText
                 android:id="@+id/etNewMessageInput"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:maxHeight="80dp"
-
+                android:layout_weight="1"
                 android:background="@drawable/msg_input_box_bg"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="4dp"
+                android:paddingEnd="40dp"
+
                 android:hint="Сообщение..."
                 android:inputType="textMultiLine"
+                android:maxHeight="80dp"
                 android:maxLines="4"
 
                 android:padding="8dp"
                 android:textSize="20sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btnAddMedia"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/btnIcons"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:padding="4dp"
+                android:layout_marginEnd="4dp"
+
+                android:src="@drawable/ic_icons_btn"
+                android:contentDescription="icons btn"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="@id/etNewMessageInput"
+                app:layout_constraintBottom_toBottomOf="@id/etNewMessageInput"
+                app:layout_constraintEnd_toEndOf="@id/etNewMessageInput"
                 />
 
             <ImageView
@@ -126,8 +243,11 @@
                 android:layout_marginStart="8dp"
 
                 android:src="@drawable/ic_audio_msg"
-                android:contentDescription="send message btn"
+                android:contentDescription="audio message btn"
                 android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 />
             <ImageView
                 android:id="@+id/btnSendMessage"
@@ -139,9 +259,12 @@
 
                 android:src="@drawable/ic_send"
                 android:contentDescription="send message btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:visibility="gone"
                 />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

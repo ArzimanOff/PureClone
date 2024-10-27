@@ -4,7 +4,7 @@ package com.arziman_off.pureclone.data
 import com.arziman_off.pureclone.domain.UserChat
 import kotlin.random.Random
 
-object ChatGenerator {
+object ChatsListGenerator {
     private val avatars = listOf(
         "https://randomuser.me/api/portraits/men/1.jpg",
         "https://randomuser.me/api/portraits/women/2.jpg",

@@ -14,8 +14,8 @@ import com.arziman_off.pureclone.domain.UserChat
 import com.arziman_off.pureclone.presentation.fragments.sheet_dialog_fragment.CustomBottomSheet
 import com.arziman_off.pureclone.presentation.recycler_chats.ChatClickListener
 import com.arziman_off.pureclone.presentation.recycler_chats.ChatsAdapter
-import com.arziman_off.pureclone.presentation.view_models.ChatsViewModel
-import com.arziman_off.pureclone.presentation.view_models.ChatsViewModelFactory
+import com.arziman_off.pureclone.presentation.view_models.ChatsListViewModel
+import com.arziman_off.pureclone.presentation.view_models.ChatsListViewModelFactory
 
 
 class ChatsListFragment : Fragment(), ChatClickListener {
@@ -29,8 +29,8 @@ class ChatsListFragment : Fragment(), ChatClickListener {
     private val viewModel by lazy {
         ViewModelProvider(
             this,
-            ChatsViewModelFactory()
-        )[ChatsViewModel::class.java]
+            ChatsListViewModelFactory()
+        )[ChatsListViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

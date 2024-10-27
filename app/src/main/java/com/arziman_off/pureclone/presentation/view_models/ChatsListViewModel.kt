@@ -3,11 +3,11 @@ package com.arziman_off.pureclone.presentation.view_models
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.arziman_off.pureclone.data.ChatGenerator
+import com.arziman_off.pureclone.data.ChatsListGenerator
 import com.arziman_off.pureclone.domain.UserChat
 import kotlin.random.Random
 
-class ChatsViewModel: ViewModel(
+class ChatsListViewModel: ViewModel(
     // аргументы, если нужны
 ) {
     private val _chatListIsLoading = MutableLiveData<Boolean>()
@@ -33,7 +33,7 @@ class ChatsViewModel: ViewModel(
     fun loadChatsInfo(){
         _chatListIsLoading.value = true
         //TODO сделать задержку, для имитации загрузки из сети
-        _chatsList.value = ChatGenerator.generateChats(20)
+        _chatsList.value = ChatsListGenerator.generateChats(20)
         _chatListIsLoading.value = false
     }
     fun loadLikesCountInfo(){
