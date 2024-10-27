@@ -31,7 +31,6 @@ class ChatFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
 
         val userChat = arguments?.getParcelable<UserChat>(ARG_USER_CHAT)
-        val chatText = view.findViewById<TextView>(R.id.frag_text)
         return view
     }
 

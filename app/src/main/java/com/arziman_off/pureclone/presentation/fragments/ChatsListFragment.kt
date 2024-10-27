@@ -46,7 +46,7 @@ class ChatsListFragment : Fragment(), ChatClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_chats, container, false)
+        val view = inflater.inflate(R.layout.fragment_chats_list, container, false)
 
         setupRecyclerView(view)
         return view

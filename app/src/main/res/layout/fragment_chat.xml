@@ -1,15 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.fragments.ChatFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/frag_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_banners"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/banner_item"
+        tools:itemCount="5"
 
-</FrameLayout>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/helper_view_bottom_of_rv_banners"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <View
+        android:id="@+id/helper_view_top_of_rb_chats_container"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:layout_marginTop="160dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <View
+        android:id="@+id/helper_view_bottom_of_rv_banners"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        android:layout_marginTop="180dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chats_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
+        android:background="@drawable/chats_container_bg"
+
+        app:layout_constraintTop_toBottomOf="@id/helper_view_top_of_rb_chats_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/empty_chat_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Начни общение"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_margin="32dp"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/etNewMessageInputBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="center"
+            >
+
+            <ImageView
+                android:id="@+id/btnAddMedia"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:padding="4dp"
+                android:layout_marginEnd="8dp"
+
+                android:src="@drawable/ic_add_media"
+
+                android:contentDescription="send message btn" />
+
+            <EditText
+                android:id="@+id/etNewMessageInput"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:maxHeight="80dp"
+
+                android:background="@drawable/msg_input_box_bg"
+                android:hint="Сообщение..."
+                android:inputType="textMultiLine"
+                android:maxLines="4"
+
+                android:padding="8dp"
+                android:textSize="20sp"
+                />
+
+            <ImageView
+                android:id="@+id/btnAudioMsg"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:padding="4dp"
+                android:layout_marginStart="8dp"
+
+                android:src="@drawable/ic_audio_msg"
+                android:contentDescription="send message btn"
+                android:visibility="visible"
+                />
+            <ImageView
+                android:id="@+id/btnSendMessage"
+
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+
+                android:layout_marginStart="8dp"
+
+                android:src="@drawable/ic_send"
+                android:contentDescription="send message btn"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
