@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.arziman_off.pureclone.R
 import com.arziman_off.pureclone.domain.Message
@@ -93,6 +94,10 @@ class ChatFragment : Fragment() {
 
         viewModel.cntOfTemptations.observe(viewLifecycleOwner){
             notifyText.text = it
+        }
+
+        viewModel.messageIsSent.observe(viewLifecycleOwner){
+            etNewMessageInput.setText("")
         }
     }
 

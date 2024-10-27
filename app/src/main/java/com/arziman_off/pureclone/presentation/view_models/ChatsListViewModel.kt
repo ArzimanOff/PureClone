@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.arziman_off.pureclone.data.ChatsListGenerator
+import com.arziman_off.pureclone.data.CountOfLikesGenerator
 import com.arziman_off.pureclone.domain.UserChat
 import kotlin.random.Random
 
@@ -36,10 +37,12 @@ class ChatsListViewModel: ViewModel(
         _chatsList.value = ChatsListGenerator.generateChats(20)
         _chatListIsLoading.value = false
     }
-    fun loadLikesCountInfo(){
+    private fun loadLikesCountInfo(){
         _likesCntIsLoading.value = true
         //TODO сделать задержку, для имитации загрузки из сети
-        _likesCntText.value = getFormatedLikesCntTex(Random.nextInt(1, 24))
+        _likesCntText.value = getFormatedLikesCntTex(
+            CountOfLikesGenerator.generateCountOfLikes()
+        )
         _likesCntIsLoading.value = false
     }
 

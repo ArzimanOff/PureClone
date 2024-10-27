@@ -2,6 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="chat_background_color">#EFEDED</color>
+    <color name="nav_bar_background_color">#F6F6F6</color>
     <color name="main_color">#947FFD</color>
     <color name="main_color_dark">#7446AC</color>
     <color name="switch_background">#6B6B6B</color>
@@ -9,6 +11,14 @@
     <color name="chat_btn_icons_color">#ADABAB</color>
     <color name="isolation_mode_fragment_bg">#AFBBFA</color>
     <color name="btn_buy_bg_color">#AA044A</color>
-    <color name="chat_background_color">#F2F2F2</color>
     <color name="screen_bg">#BCBCBC</color>
+
+    <color name="tariff_bg_color">#DADBF8</color>
+    <color name="tariff_highlighting_bg_color">#C495FB</color>
+    <color name="tariff_highlighting_border_color">#9B54EF</color>
+    <color name="tariff_border_color">#8585AF</color>
+
+
+    <color name="bottom_nav_active">#6939A4</color> <!-- Цвет активной иконки и текста -->
+    <color name="bottom_nav_inactive">#B381EF</color> <!-- Цвет неактивной иконки и текста -->
 </resources>

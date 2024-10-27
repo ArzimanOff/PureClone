@@ -58,18 +58,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/isolation_mode_title" />
 
-    <LinearLayout
-        android:id="@+id/tariffs_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tariffs"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="4dp"
         app:layout_constraintBottom_toTopOf="@id/btn_buy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/isolation_mode_text"
-
-        />
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_tariff"
+        tools:spanCount="3" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_buy"
@@ -89,7 +90,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tariffs_container" />
+        app:layout_constraintTop_toBottomOf="@id/rv_tariffs" />
 
     <TextView
         android:id="@+id/terms_and_conditions"
