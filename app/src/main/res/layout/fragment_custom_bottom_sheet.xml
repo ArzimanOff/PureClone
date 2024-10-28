@@ -20,7 +20,7 @@
         android:id="@+id/ic_isolation_mode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="Закрыть"
+        android:contentDescription="Иллюстрация"
         android:src="@drawable/ic_isolation_mode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

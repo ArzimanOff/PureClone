@@ -34,15 +34,6 @@ object TariffGenerator {
                 "-42%"
             )
         )
-        tariffs.add(
-            Tariff(
-                tariffs.size,
-                30,
-                1299,
-                true,
-                "-20%"
-            )
-        )
         return tariffs
     }
 }

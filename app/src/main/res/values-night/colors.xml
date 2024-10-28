@@ -13,7 +13,9 @@
     <color name="switch_background">#6B6B6B</color>
     <color name="screen_bg">#000000</color>
 
-    <color name="tariff_bg_color">#313135</color>
+    <color name="tariff_default_bg_color">#313135</color>
+    <color name="tariff_selected_bg_color">#5B2189</color>
+
     <color name="tariff_highlighting_bg_color">#C495FB</color>
     <color name="tariff_highlighting_border_color">#9B54EF</color>
     <color name="tariff_border_color">#6A6A6F</color>
