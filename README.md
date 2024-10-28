@@ -4,10 +4,12 @@
 
 ### Условие задания:</br>
 
-Наша команда планирует создать два приложения для знакомств: аналог PURE (App Store, Google Play) и аналог Tinder (App Store).
+"Наша команда планирует создать два приложения для знакомств: аналог PURE (App Store, Google Play) и аналог Tinder (App Store).
 Наши приложения повторяют функционал на 95 процентов, но отличаются дизайном. 
 Frontend: 
-Необходимо реализовать вёрстку трех экранов приложения аналога Pure и переходов между ними и прислать в чат с HR.
+Необходимо реализовать вёрстку трех экранов приложения аналога Pure и переходов между ними и прислать в чат с HR."
+
+Полное ТЗ: https://docs.google.com/document/d/1KT7BUyVmAg_atQHZpZlYOczjtUYxrNN1zkzT12zOHEk/edit?tab=t.0#heading=h.wr0495ktovs4 ()
 
 <a href="https://www.figma.com/design/osxXoWEg61OEE6X7RYiokQ/Pure_clone_test_app?node-id=0-1&t=UPpwMStClk3ycbn2-1">Ссылка на Дизайн Макет</a>
 это ссылка на мой figma файл в котором я внес несколько изменений в изначально заданный макет
