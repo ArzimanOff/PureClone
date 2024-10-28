@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="30dp"
+    android:background="@drawable/switch_background"
+    android:padding="4dp">
+
+    <!-- Иконка для состояния "выключено" -->
+    <ImageView
+        android:id="@+id/switchThumbOff"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="start|center_vertical"
+        android:src="@drawable/ic_unchecked_icon" />
+
+    <!-- Иконка для состояния "включено" -->
+    <ImageView
+        android:id="@+id/switchThumbOn"
+        android:layout_width="36dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:src="@drawable/ic_checked_icon"
+        android:visibility="gone" />
+
+</FrameLayout>

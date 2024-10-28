@@ -10,4 +10,6 @@
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="in_progress_text">Раздел находится в разработке! \n Скоро тут будет красиво</string>
+    <string name="switchModeStatusOn">On</string>
+    <string name="switchModeStatusOff">Off</string>
 </resources>
