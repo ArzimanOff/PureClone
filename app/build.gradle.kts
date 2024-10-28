@@ -50,6 +50,9 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
 
+    val lottieVersion = "6.5.2"
+    implementation("com.airbnb.android:lottie:$lottieVersion")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
