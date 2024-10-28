@@ -43,7 +43,7 @@ class CustomBottomSheet : BottomSheetDialogFragment() {
         tariffsRecyclerView = view.findViewById(R.id.rv_tariffs)
         tariffsAdapter = TariffsAdapter()
         tariffsRecyclerView.setLayoutManager(GridLayoutManager(view.context, 3))
-        tariffsAdapter.submitList(TariffGenerator.generateTariffs())
+
         tariffsRecyclerView.adapter = tariffsAdapter
     }
 
@@ -51,6 +51,9 @@ class CustomBottomSheet : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView(view)
+        viewModel.tariffsList.observe(viewLifecycleOwner){
+            tariffsAdapter.submitList(it)
+        }
         val closeButton = view.findViewById<View>(R.id.closeButton)
         closeButton.setOnClickListener {
             dismiss()
