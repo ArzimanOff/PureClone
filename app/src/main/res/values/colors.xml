@@ -6,12 +6,14 @@
     <color name="nav_bar_background_color">#F6F6F6</color>
     <color name="main_color">#947FFD</color>
     <color name="main_color_dark">#7446AC</color>
-    <color name="switch_background">#E6E4E4</color>
     <color name="chat_input_text_color">#D0CECE</color>
     <color name="chat_btn_icons_color">#ADABAB</color>
     <color name="isolation_mode_fragment_bg">#AFBBFA</color>
     <color name="btn_buy_bg_color">#AA044A</color>
     <color name="screen_bg">#BCBCBC</color>
+    <color name="switch_background">#E6E4E4</color>
+    <color name="switch_border_color">#C7C3C3</color>
+
 
     <color name="tariff_default_bg_color">#DADBF8</color>
     <color name="tariff_selected_bg_color">#B36CE7</color>

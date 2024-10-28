@@ -10,7 +10,9 @@
     <color name="chat_btn_icons_color">#ADABAB</color>
     <color name="isolation_mode_fragment_bg">#0D1333</color>
     <color name="btn_buy_bg_color">#AA044A</color>
-    <color name="switch_background">#6B6B6B</color>
+    <color name="switch_background">#383838</color>
+    <color name="switch_border_color">#525252</color>
+
     <color name="screen_bg">#000000</color>
 
     <color name="tariff_default_bg_color">#313135</color>
