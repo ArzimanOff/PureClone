@@ -1,5 +1,7 @@
 ## Основной код проекта находится в папке <a href="https://github.com/ArzimanOff/PureClone/tree/master/app/src/main">main (здесь)</a> 
 
+## Ссылка на скачивания APK файла <a href="">(здесь)</a> 
+
 # Это приложение созданное в качестве тестового задания от <a href="https://games.geomaxfinance.ru/">Geomax Finance</a>
 
 ### Условие задания:</br>
